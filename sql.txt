@@ -1,0 +1,44 @@
+DECLARE @a float = 5.4
+DECLARE @b float = 17.09
+DECLARE @c float = 13.12
+
+PRINT (@a + @b + @c) / 3
+
+
+
+IF DATEPART(HOUR, GETDATE()) BETWEEN 4 AND 9
+BEGIN 
+	PRINT 'GOOD MORNING!'
+END
+
+ELSE IF DATEPART(HOUR, GETDATE()) BETWEEN 10 AND 17
+BEGIN 
+	PRINT 'GOOD AFTERNOON!'
+END
+
+ELSE IF DATEPART(HOUR, GETDATE()) BETWEEN 18 AND 21
+BEGIN 
+	PRINT 'GOOD EVENING!'
+END
+
+ELSE 
+BEGIN 
+	PRINT 'GOOD NIGHT!'
+END
+
+
+
+DECLARE @num int = 123006
+
+DECLARE @first_part int = @num / 100000 + @num / 10000 % 10 + @num / 1000 % 10
+DECLARE @second_part int = @num / 100 % 10 + @num / 10 % 10 + @num % 10
+
+IF @first_part = @second_part
+BEGIN
+	PRINT 'LUCKY!'
+END
+
+ELSE
+BEGIN
+	PRINT 'UNLUCKY!'
+END
